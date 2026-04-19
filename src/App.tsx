@@ -1,4 +1,5 @@
 import { NavigationProvider } from "@/contexts/NavigationContext";
+import { EvaluationProvider } from "@/contexts/EvaluationContext";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -12,9 +13,11 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <NavigationProvider>
-        <AppLayout />
-      </NavigationProvider>
+      <EvaluationProvider>
+        <NavigationProvider>
+          <AppLayout />
+        </NavigationProvider>
+      </EvaluationProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
